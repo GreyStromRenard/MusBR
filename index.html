@@ -8,6 +8,43 @@
       <link rel="stylesheet" type="text/css" href="src/main/webapp/styles/main.css">
       <link rel="stylesheet" type="text/css" href="src/main/webapp/styles/style.css">
       <title>Musée des Beaux Rêves</title>
+
+      <audio id="Prologue">
+        <source src="src/main/webapp/assets/audio/prologue.mp3" type="audio/mpeg">
+      </audio>
+    
+      <audio id="Explications">
+        <source src="src/main/webapp/assets/audio/explication.mp3" type="audio/mpeg">
+      </audio>
+
+      <audio id="ActIquestion">
+        <source src="src/main/webapp/assets/audio/enigme1.mp3" type="audio/mpeg">
+      </audio>
+
+      <audio id="ActIréponse">
+        <source src="src/main/webapp/assets/audio/enigme1_fin.mp3" type="audio/mpeg">
+      </audio>
+
+      <audio id="ActIIquestion">
+        <source src="src/main/webapp/assets/audio/enigme2.mp3" type="audio/mpeg">
+      </audio>
+
+      <audio id="ActIIréponse">
+        <source src="src/main/webapp/assets/audio/enigme2_fin.mp3" type="audio/mpeg">
+      </audio>
+
+      <audio id="ActIIIquestion">
+        <source src="src/main/webapp/assets/audio/enigme3.mp3" type="audio/mpeg">
+      </audio>
+
+      <audio id="ActIIIréponse">
+        <source src="src/main/webapp/assets/audio/enigme3_fin.mp3" type="audio/mpeg">
+      </audio>
+
+      <audio id="épilogue">
+        <source src="src/main/webapp/assets/audio/epilogue.mp3" type="audio/mpeg">
+      </audio>
+
   </head>
 <body>
 <!-- partial:index.partial.html -->
@@ -26,7 +63,7 @@
 </section>
 
 <section id="screen-2" class="section-form">
-  <button data-goto="screen-1" class="return-button">← Retour</button>
+  <button data-goto="screen-1" class="return-button" onclick="pauseAudio(Explications)">← Retour</button>
   <h2>Explications</h2>
   <div id="head-line"></div>
   <div class="text-form">
@@ -34,10 +71,11 @@
     <p>Cette expérience va vous demander de vous déplacer de salle en salle</p>
   </div>
   <div class="button-form">
-    <button data-goto="screen-3" class="first-main-button">
+    <button data-goto="screen-3" class="first-main-button"  onclick="pauseAudio(Explications)">
       CONTINUER →
     </button>
   </div>
+  <img src="src/main/webapp/assets/icon/narration.png" onclick="playAudio(Explications)" alt="Italian Trulli">
 </section>
 
 <section id="screen-3" class="section-form">
@@ -49,10 +87,11 @@
     <p>Tu es prêt ? Laisse moi te guider, rendez-vous à l’acte 1, un marquage sur le mur sera indiqué pas de panique ! </p>
   </div>
   <div class="button-form">
-    <button data-goto="screen-4" class="first-main-button">
+    <button data-goto="screen-4" class="first-main-button" onclick="pauseAudio(Prologue)">
       CONTINUER →
     </button>
   </div>
+  <img src="src/main/webapp/assets/icon/narration.png" onclick="playAudio(Prologue)" alt="Italian Trulli">
 </section>
 
 <section id="screen-4" class="is-visible section-form">
@@ -82,15 +121,21 @@
     </br>
     <button id="faux" data-goto="screen-4" class="third-main-button">Autoportait</button>
   </div>
+  <div class="popup" onclick="Popindice()">
+  <img src="src/main/webapp/assets/icon/indice.png">
+  <span class="popuptext" id="myPopup">Impossible de faire de la musique sans instrument !</span>
+  </div>
+  <img src="src/main/webapp/assets/icon/narration.png" onclick="playAudio(ActIquestion)" alt="Italian Trulli">
 </section>
 
 <section id="screen-5">
   <h2>Interlude</h2>
   <p>Quel talent ! Il s’agissait bien de “Un chanteur s'accompagnant au Luth” de Ter Brugghen. Ce tableau est connu pour son utilisation du clair-obscur, qui crée un contraste dramatique entre la lumière et l'ombre.</p>
   <p>Dirigez-vous vers la zone 2</p>
-  <button data-goto="screen-6">
+  <button data-goto="screen-6" onclick="pauseAudio(ActIréponse)">
     Continuer
   </button>
+  <img src="src/main/webapp/assets/icon/narration.png" onclick="playAudio(ActIréponse)" alt="Italian Trulli">
 </section>
 
 <section id="screen-6">
@@ -111,15 +156,23 @@
 <button id="faux" data-goto="screen-6">Trophée de chasse</button>
 </br>
 <button id="faux" data-goto="screen-6">Guirlande de fruit</button>
+
+</br></br>
+<div class="popup" onclick="Popindice2()">
+  <img src="src/main/webapp/assets/icon/indice.png">
+  <span class="popuptext" id="myPopup2">Attention, si vous ne faites pas attention, la peinture va vous pincez</span>
+</div>
+<img src="src/main/webapp/assets/icon/narration.png" onclick="playAudio(ActIIquestion)" alt="Italian Trulli">
 </section>
 
 <section id="screen-7">
   <h2>Interlude</h2>
   <p>Tu as trouvé ! “Nature morte aux crustacés” date de 1911 et il est considéré comme faisant partie de la période fauvise de Matisse. Rendez-vous à l’acte 3 pour la dernière énigme</p>
   <p>Diriger vous vers la zone 3</p>
-  <button data-goto="screen-8">
+  <button data-goto="screen-8" onclick="pauseAudio(ActIIréponse)">
     Continuer
   </button>
+  <img src="src/main/webapp/assets/icon/narration.png" onclick="playAudio(ActIIréponse)" alt="Italian Trulli">
 </section>
 
 <section id="screen-8">
@@ -142,14 +195,31 @@
 <button id="faux" data-goto="screen-8">Laocoon et ses fils mordus par les serpents</button>
 </br>
 <button id="faux" data-goto="screen-8">La chasse aux renard</button>
+
+</br></br>
+<div class="popup" onclick="Popindice3()">
+  <img src="src/main/webapp/assets/icon/indice.png">
+  <span class="popuptext" id="myPopup3">On dirait que le roi de la jungle remplacera les carottes pour le dîner de ce soir</span>
+</div>
+<img src="src/main/webapp/assets/icon/narration.png" onclick="playAudio(ActIIIquestion)" alt="Italian Trulli">
+</section>
+
+<section id="screen-8.réponse">
+  <h2>Interlude</h2>
+  <p>Tu as du flair. Snyders a été très influent dans l'évolution de l'art de la nature morte, en introduisant de nouveaux sujets tels que les animaux morts et en développant un style plus sophistiqué et détaillé.</p>
+  <button data-goto="screen-9" onclick="pauseAudio(ActIIIréponse)">
+    Continuer
+  </button>
+  <img src="src/main/webapp/assets/icon/narration.png" onclick="playAudio(ActIIIréponse)" alt="Italian Trulli">
 </section>
 
 <section id="screen-9">
   <h2>Epilogue</h2>
   <p>Je suis très fier de toi, merci d’avoir joué le jeu. À présent je peux me reposer en paix, sache que ce fut un rêve pour moi d’ouvrir les portes de ce musée ! Je te souhaite tout le possible pour que toi aussi tu puisses parvenir aux tiens.</p>
-  <button data-goto="screen-10">
+  <button data-goto="screen-10" onclick="pauseAudio(épilogue)">
     Continuer
   </button>
+  <img src="src/main/webapp/assets/icon/narration.png" onclick="playAudio(épilogue)" alt="Italian Trulli">
 </section>
 
 <section id="screen-10">
@@ -160,14 +230,14 @@
   </button>
 </br>
 </br>
-  <button data-goto="screen-1">
-    Acceuil
-  </button>
+<button onclick="document.location.reload(true)">
+  Acceuil
+</button>
 </section>
 
 <section id="screen-11">
   <h2>Crédits</h2>
-  <button data-goto="screen-1">
+  <button onclick="document.location.reload(true)">
     Acceuil
   </button>
 </section>
@@ -201,10 +271,11 @@
     <button class="third-main-button">Autoportait</button>
   </div>
   <div class="button-form">
-    <button data-goto="screen-5" class="first-main-button">
+    <button data-goto="screen-5" class="first-main-button" onclick="pauseAudio(ActIquestion)">
       CONTINUER →
     </button>
   </div>
+  <img src="src/main/webapp/assets/icon/narration.png" onclick="playAudio(ActIquestion)" alt="Italian Trulli">
 </section>
 
 
@@ -228,9 +299,10 @@
 </br>
 <button id="rouge" disabled>Guirlande de fruit</button>
 </br></br>
-<button data-goto="screen-7">
+<button data-goto="screen-7" onclick="pauseAudio(ActIIquestion)">
   Continuer
 </button>
+<img src="src/main/webapp/assets/icon/narration.png" onclick="playAudio(ActIIquestion)" alt="Italian Trulli">
 </section>
 
 
@@ -255,9 +327,10 @@
 </br>
 <button id="rouge" disabled>La chasse aux renard</button>
 </br></br>
-<button data-goto="screen-9">
+<button data-goto="screen-8.réponse" onclick="pauseAudio(ActIIIquestion)">
   Continuer
 </button>
+<img src="src/main/webapp/assets/icon/narration.png" onclick="playAudio(ActIIIquestion)" alt="Italian Trulli">
 </section>
 
 

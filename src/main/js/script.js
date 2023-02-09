@@ -29,3 +29,25 @@ function goToScreen(id) {
      }
   })
 }
+
+function Popindice() {
+  var popup = document.getElementById("myPopup");
+  popup.classList.toggle("show");
+}
+function Popindice2() {
+  var popup = document.getElementById("myPopup2");
+  popup.classList.toggle("show");
+}
+function Popindice3() {
+  var popup = document.getElementById("myPopup3");
+  popup.classList.toggle("show");
+}
+
+function playAudio(Name) { 
+  Name.play(); 
+} 
+
+function pauseAudio(Name) { 
+  Name.pause(); 
+} 
+ 
