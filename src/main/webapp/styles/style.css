@@ -18,7 +18,7 @@ body
     /* Image de fond */
     background-image: url('/src/main/webapp/assets/background.png');
     background-size: 170%;
-    background-position-y: bottom;
+    background-position-y: 410px;
     background-repeat: no-repeat;
 }
 
@@ -50,6 +50,14 @@ h3
 {
     font-family: 'Marianne-Bold', Arial, Helvetica, sans-serif;
     font-size: 24px;
+    color: var(--main-color);
+}
+
+h4
+{
+    margin: 0;
+    font-family: 'Marianne-Bold', Arial, Helvetica, sans-serif;
+    font-size: 14px;
     color: var(--main-color);
 }
 

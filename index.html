@@ -63,7 +63,14 @@
 </section>
 
 <section id="screen-2" class="section-form">
-  <button data-goto="screen-1" class="return-button" onclick="pauseAudio(Explications)">← Retour</button>
+  <div class="header-form">
+    <button data-goto="screen-1" class="return-button" onclick="pauseAudio(Explications)">← Retour</button>
+    <div class="narration-form" onclick="playAudio(Explications)" alt="Italian Trulli">
+      <img src="src/main/webapp/assets/icon/narration.svg" height="40px">
+      <h4>Narration</h4>
+    </div>
+  </div>
+
   <h2>Explications</h2>
   <div id="head-line"></div>
   <div class="text-form">
@@ -75,11 +82,16 @@
       CONTINUER →
     </button>
   </div>
-  <img src="src/main/webapp/assets/icon/narration.png" onclick="playAudio(Explications)" alt="Italian Trulli">
 </section>
 
 <section id="screen-3" class="section-form">
-  <button data-goto="screen-2" class="return-button">← Retour</button>
+  <div class="header-form">
+    <button data-goto="screen-2" class="return-button" onclick="pauseAudio(Prologue)">← Retour</button>
+    <div class="narration-form" onclick="playAudio(Prologue)" alt="Italian Trulli">
+      <img src="src/main/webapp/assets/icon/narration.svg" height="40px">
+      <h4>Narration</h4>
+    </div>
+  </div>
   <h2>Prologue</h2>
   <div id="head-line"></div>
   <div class="text-form">
@@ -91,11 +103,17 @@
       CONTINUER →
     </button>
   </div>
-  <img src="src/main/webapp/assets/icon/narration.png" onclick="playAudio(Prologue)" alt="Italian Trulli">
 </section>
 
-<section id="screen-4" class="is-visible section-form">
-  <button data-goto="screen-3" class="return-button">← Retour</button>
+<section id="screen-4" class="section-form is-visible">
+  <div class="header-form">
+    <button data-goto="screen-3" class="return-button" onclick="pauseAudio(ActIquestion)">← Retour</button>
+    <div class="narration-form" onclick="playAudio(ActIquestion)" alt="Italian Trulli">
+      <img src="src/main/webapp/assets/icon/narration.svg" height="40px">
+      <h4>Narration</h4>
+    </div>
+  </div>
+
   <h2>Acte I</h2>
   <div id="head-line"></div>
 
@@ -121,11 +139,14 @@
     </br>
     <button id="faux" data-goto="screen-4" class="third-main-button">Autoportait</button>
   </div>
-  <div class="popup" onclick="Popindice()">
-  <img src="src/main/webapp/assets/icon/indice.png">
-  <span class="popuptext" id="myPopup">Impossible de faire de la musique sans instrument !</span>
+  
+  <div class="icon-form">
+    <div class="popup" onclick="Popindice()">
+      <img src="src/main/webapp/assets/icon/indice.svg" style="flood-color: var(--background-color);" height="40px">
+      <span class="popuptext" id="myPopup">Impossible de faire de la musique sans instrument !</span>
+    </div>
+    <h4 style="color: var(--background-color);">Indice</h4>
   </div>
-  <img src="src/main/webapp/assets/icon/narration.png" onclick="playAudio(ActIquestion)" alt="Italian Trulli">
 </section>
 
 <section id="screen-5">
@@ -135,7 +156,6 @@
   <button data-goto="screen-6" onclick="pauseAudio(ActIréponse)">
     Continuer
   </button>
-  <img src="src/main/webapp/assets/icon/narration.png" onclick="playAudio(ActIréponse)" alt="Italian Trulli">
 </section>
 
 <section id="screen-6">
@@ -244,7 +264,14 @@
 
 
 <section id="screen-4-2" class="section-form">
-  <button data-goto="screen-4" class="return-button">← Retour</button>
+  <div class="header-form">
+    <button data-goto="screen-3" class="return-button" onclick="pauseAudio(Explications)">← Retour</button>
+    <div class="narration-form" onclick="playAudio(Explications)" alt="Italian Trulli">
+      <img src="src/main/webapp/assets/icon/narration.svg">
+      <h4>Narration</h4>
+    </div>
+  </div>
+
   <h2>Acte I</h2>
   <div id="head-line"></div>
 
@@ -270,12 +297,21 @@
     </br>
     <button class="third-main-button">Autoportait</button>
   </div>
-  <div class="button-form">
-    <button data-goto="screen-5" class="first-main-button" onclick="pauseAudio(ActIquestion)">
-      CONTINUER →
-    </button>
+
+  <div class="header-form">
+    <div class="icon-form">
+      <div class="popup" onclick="Popindice()">
+        <img src="src/main/webapp/assets/icon/indice.svg" style="flood-color: var(--background-color);">
+        <span class="popuptext" id="myPopup">Impossible de faire de la musique sans instrument !</span>
+      </div>
+      <h4 style="color: var(--background-color);">Indice</h4>
+    </div>
+    <div class="button-form">
+      <button data-goto="screen-5" class="first-main-button" onclick="pauseAudio(ActIquestion)">
+        VALIDER →
+      </button>
+    </div>
   </div>
-  <img src="src/main/webapp/assets/icon/narration.png" onclick="playAudio(ActIquestion)" alt="Italian Trulli">
 </section>
 
 
