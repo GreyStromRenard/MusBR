@@ -1,0 +1,143 @@
+body
+{
+    --main-color: #2D58F3;
+    --background-color: #E8E8E8;
+    --second-color: #545454;
+    padding: 50px;
+    margin: 0;
+    background-color: var(--background-color);
+    overflow: hidden;
+    height: 100vh;
+    /* max-height: 900px; */
+    /* min-height: none; */
+    max-width: 790px;
+    min-width: none;
+    display: flex;
+    justify-content: center;
+
+    /* Image de fond */
+    background-image: url('/src/main/webapp/assets/background.png');
+    background-size: 170%;
+    background-position-y: bottom;
+    background-repeat: no-repeat;
+}
+
+/* Affichage des sections */
+section {
+
+    /* position: absolute; */
+    display: none;
+    transition: opacity 0.4s;
+}
+  
+section.is-visible {
+    display: block;
+    opacity: 1;
+}
+
+h2
+{
+    margin: 0;
+    margin-bottom: 5px;
+}
+
+h3
+{
+    font-family: 'Marianne-Bold', Arial, Helvetica, sans-serif;
+    font-size: 24px;
+    color: var(--main-color);
+}
+
+.first-main-button
+{
+    background-color: var(--main-color);
+    padding: 13px;
+    border-radius: 7px;
+    color: var(--background-color);
+    border: none;
+}
+
+.second-main-button
+{
+    border: solid var(--main-color) 3px;
+    color: var(--main-color);
+    border-radius: 7px;
+    width: 75%;
+    padding: 13px;
+}
+
+/* Monument Extended Font */
+
+@font-face {
+    font-family: 'MonumentExtended-Regular';
+    src: url('/src/main/webapp/assets/monument-extended-font/MonumentExtended-Regular.otf') format('otf');
+}
+
+@font-face {
+    font-family: 'MonumentExtended-Ultrabold';
+    src: url('/src/main/webapp/assets/monument-extended-font/MonumentExtended-Ultrabold.otf') format('otf');
+}
+
+@import url(//db.onlinewebfonts.com/c/55d433372d270829c51e2577a78ef12d?family=Monument+Extended);
+
+/* Marianne Font */
+
+@font-face {
+    font-family: 'Marianne-Bold_Italic';
+    src: url('/src/main/webapp/assets/marianne-font/Marianne-Bold_Italic.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Marianne-Bold';
+    src: url('/src/main/webapp/assets/marianne-font/Marianne-Bold.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Marianne-ExtraBold_Italic';
+    src: url('/src/main/webapp/assets/marianne-font/Marianne-ExtraBold_Italic.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Marianne-ExtraBold';
+    src: url('/src/main/webapp/assets/marianne-font/Marianne-ExtraBold.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Marianne-Light_Italic';
+    src: url('/src/main/webapp/assets/marianne-font/Marianne-Light_Italic.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Marianne-Light';
+    src: url('/src/main/webapp/assets/marianne-font/Marianne-Light.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Marianne-Medium_Italic';
+    src: url('/src/main/webapp/assets/marianne-font/Marianne-Medium_Italic.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Marianne-Medium';
+    src: url('/src/main/webapp/assets/marianne-font/Marianne-Medium.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Marianne-Regular_Italic';
+    src: url('/src/main/webapp/assets/marianne-font/Marianne-Regular_Italic.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Marianne-Regular';
+    src: url('/src/main/webapp/assets/marianne-font/Marianne-Regular.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Marianne-Thin_Italic';
+    src: url('/src/main/webapp/assets/marianne-font/Marianne-Thin_Italic.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Marianne-Thin';
+    src: url('/src/main/webapp/assets/marianne-font/Marianne-Thin.woff') format('woff');
+}

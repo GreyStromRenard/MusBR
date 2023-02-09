@@ -1,0 +1,67 @@
+#head-line
+{
+    border-top: solid var(--main-color) 3px;
+    width: 50%;
+}
+
+#main-head
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    max-height: 700px;
+}
+
+.form
+{
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    max-width: 100%;
+}
+
+.section-form button
+{
+    font-family: 'Marianne-Bold', Arial, Helvetica, sans-serif;
+    font-size: 18px;
+}
+
+.section-form h2
+{
+    font-family: 'Monument Extended', Arial, Helvetica, sans-serif;
+    color: var(--main-color);
+    font-weight: 200;
+    font-size: 32px;
+}
+
+.section-form
+{
+    font-family: 'Marriane-Regular', Arial, Helvetica, sans-serif;
+    color: var(--second-color);
+    font-size: 16px;
+    height: auto;
+}
+
+/* Font size for button : 18px, padding for button : 13px */
+
+.main-buttons button
+{
+    font-family: 'Marianne-Bold', Arial, Helvetica, sans-serif;
+    font-size: 18px;
+}
+
+.main-buttons
+{
+    display: flex;
+    flex-direction: column;
+    height: 120px;
+    justify-content: space-between;
+}
+
+.return-button
+{
+    border: none;
+    padding: unset;
+    color: var(--second-color);
+}
