@@ -11,11 +11,11 @@
   </head>
 <body>
 <!-- partial:index.partial.html -->
-<section id="screen-1" class="is-visible section-form">
+<section id="screen-1" class="section-form">
   <div class="form">
     <div id="main-head">
         <img src="src/main/webapp/assets/icon_musbr.svg" alt="Icône du Musée des Beaux Rêves" width="50px">
-        <img src="src/main/webapp/assets/logo_musbr.svg" alt="Logo du Musée des Beaux Rêves">
+        <img src="src/main/webapp/assets/logo-musbr.svg" alt="Logo du Musée des Beaux Rêves" width="230px">
         <div id="head-line"></div>
         <h3>Expérience immersive et auditive</h3>
     </div>
@@ -29,46 +29,65 @@
   <button data-goto="screen-1" class="return-button">← Retour</button>
   <h2>Explications</h2>
   <div id="head-line"></div>
-  <p>Cette expérience est pensé comme une expérience auditive, vous pouvez cliquer sur le bouton en haut à droite pour activer la narration</p>
-  <p>Cette expérience va vous demander de vous déplacer de salle en salle</p>
-  <button data-goto="screen-3" class="first-main-button">
-    CONTINUER →
-  </button>
+  <div class="text-form">
+    <p>Cette expérience est pensé comme une expérience auditive, vous pouvez cliquer sur le bouton en haut à droite pour activer la narration</p>
+    <p>Cette expérience va vous demander de vous déplacer de salle en salle</p>
+  </div>
+  <div class="button-form">
+    <button data-goto="screen-3" class="first-main-button">
+      CONTINUER →
+    </button>
+  </div>
 </section>
 
-<section id="screen-3">
+<section id="screen-3" class="section-form">
+  <button data-goto="screen-2" class="return-button">← Retour</button>
   <h2>Prologue</h2>
-  <p>Bonjour cher visiteur ! Je suis Pierre Lacour, mon nom ne te dit sûrement rien mais pourtant tu te situes chez moi ! J’ai fondé ce musée là il y a plus de 2 siècles et je veille toujours sur lui depuis. J'ai un challenge à te proposer, si tu acceptes de le relever. Je vais te soumettre 3 énigmes et tu devras deviner mes 3 œuvres préférées. </p>
-  <p>Tu es prêt ? Laisse moi te guider, rendez-vous à l’acte 1, un marquage sur le mur sera indiqué pas de panique ! </p>
-  <button data-goto="screen-4">
-    CONTINUER →
-  </button>
+  <div id="head-line"></div>
+  <div class="text-form">
+    <p>Bonjour cher visiteur ! Je suis Pierre Lacour, mon nom ne te dit sûrement rien mais pourtant tu te situes chez moi ! J’ai fondé ce musée là il y a plus de 2 siècles et je veille toujours sur lui depuis. J'ai un challenge à te proposer, si tu acceptes de le relever. Je vais te soumettre 3 énigmes et tu devras deviner mes 3 œuvres préférées. </p>
+    <p>Tu es prêt ? Laisse moi te guider, rendez-vous à l’acte 1, un marquage sur le mur sera indiqué pas de panique ! </p>
+  </div>
+  <div class="button-form">
+    <button data-goto="screen-4" class="first-main-button">
+      CONTINUER →
+    </button>
+  </div>
 </section>
 
-<section id="screen-4">
+<section id="screen-4" class="is-visible section-form">
+  <button data-goto="screen-3" class="return-button">← Retour</button>
   <h2>Acte I</h2>
+  <div id="head-line"></div>
 
-  <p>C’est bon ? Très bien ! Maintenant voici l’énigme :</p>
-  <p>La musique que je chante </br>
-    Vous partage mes émotions </br>
-    Pourtant je vous tourne le dos </br>
-    Mais ma chanson n'est pas fini </br>
-  </br>Qui suis-je ?</p>
-  <button data-goto="screen-4-2">
-    Un Chanteur s'accompagnant au Luth
-  </button>
-</br>
-<button id="faux" data-goto="screen-4">Saint Sébastien soigné par Irène</button>
-</br>
-<button id="faux" data-goto="screen-4">Saint Marc écrivant sous la dictée de Saint Pierre</button>
-</br>
-<button id="faux" data-goto="screen-4">Autoportait</button>
+  <div class="text-act-form">
+    <p>C’est bon ? Très bien ! Maintenant voici l’énigme :</p>
+    <div id="italic-text">
+      <p>"La musique que je chante </br>
+      Vous partage mes émotions </br>
+      Pourtant je vous tourne le dos </br>
+      Mais ma chanson n'est pas fini"</br>
+    </div>
+    </br><div id="bold-text">Qui suis-je ?</div></p>
+  </div>
+
+  <div class="button-act-form">
+    <button data-goto="screen-4-2" class="third-main-button">
+      Un Chanteur s'accompagnant au Luth
+    </button>
+    </br>
+    <button id="faux" data-goto="screen-4" class="third-main-button">Saint Sébastien soigné par Irène</button>
+    </br>
+    <button id="faux" data-goto="screen-4" class="third-main-button">Saint Marc écrivant sous la dictée de Saint Pierre</button>
+    </br>
+    <button id="faux" data-goto="screen-4" class="third-main-button">Autoportait</button>
+  </div>
 </section>
 
 <section id="screen-5">
   <h2>Interlude</h2>
   <p>Quel talent ! Il s’agissait bien de “Un chanteur s'accompagnant au Luth” de Ter Brugghen. Ce tableau est connu pour son utilisation du clair-obscur, qui crée un contraste dramatique entre la lumière et l'ombre.</p>
-  <p>Diriger vous vers la zone 2</p>
+  <p>Dirigez-vous vers la zone 2</p>
   <button data-goto="screen-6">
     Continuer
   </button>
@@ -154,28 +173,38 @@
 </section>
 
 
-<section id="screen-4-2">
+<section id="screen-4-2" class="section-form">
+  <button data-goto="screen-4" class="return-button">← Retour</button>
   <h2>Acte I</h2>
+  <div id="head-line"></div>
 
-  <p>C’est bon ? Très bien ! Maintenant voici l’énigme :</p>
-  <p>La musique que je chante </br>
-    Vous partage mes émotions </br>
-    Pourtant je vous tourne le dos </br>
-    Mais ma chanson n'est pas fini </br>
-  </br>Qui suis-je ?</p>
-  <button id="vert" disabled>
-    Un Chanteur s'accompagnant au Luth
-  </button>
-</br>
-<button id="rouge" disabled>Saint Sébastien soigné par Irène</button>
-</br>
-<button id="rouge" disabled>Saint Marc écrivant sous la dictée de Saint Pierre</button>
-</br>
-<button id="rouge" disabled>Autoportait</button>
-</br></br>
-<button data-goto="screen-5">
-  Continuer
-</button>
+  <div class="text-act-form">
+    <p>C’est bon ? Très bien ! Maintenant voici l’énigme :</p>
+    <div id="italic-text">
+      <p>"La musique que je chante </br>
+      Vous partage mes émotions </br>
+      Pourtant je vous tourne le dos </br>
+      Mais ma chanson n'est pas fini"</br>
+    </div>
+    </br><div id="bold-text">Qui suis-je ?</div></p>
+  </div>
+
+  <div class="button-act-form">
+    <button class="third-main-button" style="background-color: var(--main-color);">
+      Un Chanteur s'accompagnant au Luth
+    </button>
+    </br>
+    <button class="third-main-button">Saint Sébastien soigné par Irène</button>
+    </br>
+    <button class="third-main-button">Saint Marc écrivant sous la dictée de Saint Pierre</button>
+    </br>
+    <button class="third-main-button">Autoportait</button>
+  </div>
+  <div class="button-form">
+    <button data-goto="screen-5" class="first-main-button">
+      CONTINUER →
+    </button>
+  </div>
 </section>
 
 

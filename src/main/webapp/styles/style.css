@@ -39,6 +39,11 @@ h2
 {
     margin: 0;
     margin-bottom: 5px;
+    font-family: 'Monument Extended', Arial, Helvetica, sans-serif;
+    color: var(--main-color);
+    font-weight: 200;
+    font-size: 32px;
+    margin-top: 20px;
 }
 
 h3
@@ -46,24 +51,6 @@ h3
     font-family: 'Marianne-Bold', Arial, Helvetica, sans-serif;
     font-size: 24px;
     color: var(--main-color);
-}
-
-.first-main-button
-{
-    background-color: var(--main-color);
-    padding: 13px;
-    border-radius: 7px;
-    color: var(--background-color);
-    border: none;
-}
-
-.second-main-button
-{
-    border: solid var(--main-color) 3px;
-    color: var(--main-color);
-    border-radius: 7px;
-    width: 75%;
-    padding: 13px;
 }
 
 /* Monument Extended Font */
