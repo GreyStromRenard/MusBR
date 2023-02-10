@@ -1,6 +1,8 @@
-# Le musée des beaux rêves
-Le musée des beaux rêves est une expérience auditive et immersive qui va vous demander de vous déplasser dans le musée des beaux arts de bordeaux afin de résoudre des énigmes.
+# Musée des beaux rêves
 
-Liste de features disponible :
-* Une narration audio du texte
-* 
+Le Musée des beaux rêves est une experience auditive et immersive, l'application va vous demmander de vous déplacer dans le musée des beaux arts de Bordeaux, mais aussi de résoudre des énigmes
+
+## Liste des features :
+* 3 énigmes à résoudres
+* une histoire pour accompagner les énigmes
+* une narration auditive

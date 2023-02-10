@@ -48,11 +48,11 @@
   </head>
 <body>
 <!-- partial:index.partial.html -->
-<section id="screen-1" class="section-form">
+<section id="screen-1" class="section-form is-visible">
   <div class="form">
     <div id="main-head">
         <img src="src/main/webapp/assets/icon_musbr.svg" alt="Icône du Musée des Beaux Rêves" width="50px">
-        <img src="src/main/webapp/assets/logo-musbr.svg" alt="Logo du Musée des Beaux Rêves" width="230px">
+        <img src="src/main/webapp/assets/logo_musbr.svg" alt="Logo du Musée des Beaux Rêves" width="230px">
         <div id="head-line"></div>
         <h3>Expérience immersive et auditive</h3>
     </div>
@@ -63,51 +63,69 @@
 </section>
 
 <section id="screen-2" class="section-form">
-  <button data-goto="screen-1" class="return-button" onclick="pauseAudio(Explications)">← Retour</button>
+  <div class="header-form">
+    <button data-goto="screen-1" class="return-button" onclick="pauseAudio(Explications)">← Retour</button>
+    <div class="narration-form" onclick="playAudio(Explications)" alt="Italian Trulli">
+      <img src="src/main/webapp/assets/icon/narration.svg" height="40px">
+      <h4>Narration</h4>
+    </div>
+  </div>
+
   <h2>Explications</h2>
   <div id="head-line"></div>
   <div class="text-form">
-    <p>Cette expérience est pensé comme une expérience auditive, vous pouvez cliquer sur le bouton en haut à droite pour activer la narration</p>
-    <p>Cette expérience va vous demander de vous déplacer de salle en salle</p>
+    <p>Cette expérience est pensée comme une expérience auditive. Vous pouvez cliquer sur le bouton en haut à droite pour activer la narration.</p>
+    <p>Cette expérience va vous demander de vous déplacer de salle en salle.</p>
   </div>
   <div class="button-form">
     <button data-goto="screen-3" class="first-main-button"  onclick="pauseAudio(Explications)">
       CONTINUER →
     </button>
   </div>
-  <img src="src/main/webapp/assets/icon/narration.png" onclick="playAudio(Explications)" alt="Italian Trulli">
 </section>
 
 <section id="screen-3" class="section-form">
-  <button data-goto="screen-2" class="return-button">← Retour</button>
+  <div class="header-form">
+    <button data-goto="screen-2" class="return-button" onclick="pauseAudio(Prologue)">← Retour</button>
+    <div class="narration-form" onclick="playAudio(Prologue)" alt="Italian Trulli">
+      <img src="src/main/webapp/assets/icon/narration.svg" height="40px">
+      <h4>Narration</h4>
+    </div>
+  </div>
   <h2>Prologue</h2>
   <div id="head-line"></div>
   <div class="text-form">
-    <p>Bonjour cher visiteur ! Je suis Pierre Lacour, mon nom ne te dit sûrement rien mais pourtant tu te situes chez moi ! J’ai fondé ce musée là il y a plus de 2 siècles et je veille toujours sur lui depuis. J'ai un challenge à te proposer, si tu acceptes de le relever. Je vais te soumettre 3 énigmes et tu devras deviner mes 3 œuvres préférées. </p>
-    <p>Tu es prêt ? Laisse moi te guider, rendez-vous à l’acte 1, un marquage sur le mur sera indiqué pas de panique ! </p>
+    <p>Bonjour cher visiteur ! Je suis Pierre Lacour. Mon nom ne te dit sûrement rien mais pourtant tu te situes chez moi ! J’ai fondé ce musée il y a plus de 2 siècles et depuis je veille toujours sur lui. </br>J'ai un challenge à te proposer, si tu acceptes de le relever. Je vais te soumettre 3 énigmes et tu devras deviner mes 3 œuvres préférées. </p>
+    <p>Tu es prêt ? Laisse-moi te guider. Rendez-vous à l’acte 1, un marquage sur le mur sera indiqué, pas de panique ! </p>
   </div>
   <div class="button-form">
     <button data-goto="screen-4" class="first-main-button" onclick="pauseAudio(Prologue)">
       CONTINUER →
     </button>
   </div>
-  <img src="src/main/webapp/assets/icon/narration.png" onclick="playAudio(Prologue)" alt="Italian Trulli">
 </section>
 
-<section id="screen-4" class="is-visible section-form">
-  <button data-goto="screen-3" class="return-button">← Retour</button>
+<section id="screen-4" class="section-form">
+  <div class="header-form">
+    <button data-goto="screen-3" class="return-button" onclick="pauseAudio(ActIquestion)">← Retour</button>
+    <div class="narration-form" onclick="playAudio(ActIquestion)" alt="Italian Trulli">
+      <img src="src/main/webapp/assets/icon/narration.svg" height="40px">
+      <h4>Narration</h4>
+    </div>
+  </div>
+
   <h2>Acte I</h2>
   <div id="head-line"></div>
 
   <div class="text-act-form">
     <p>C’est bon ? Très bien ! Maintenant voici l’énigme :</p>
-    <div id="italic-text">
+    <div class="italic-text">
       <p>"La musique que je chante </br>
       Vous partage mes émotions </br>
       Pourtant je vous tourne le dos </br>
-      Mais ma chanson n'est pas fini"</br>
+      Mais ma chanson n'est pas finie"</br></p>
     </div>
-    </br><div id="bold-text">Qui suis-je ?</div></p>
+    </br><div class="bold-text"><p>Qui suis-je ?</div></p>
   </div>
 
   <div class="button-act-form">
@@ -121,216 +139,385 @@
     </br>
     <button id="faux" data-goto="screen-4" class="third-main-button">Autoportait</button>
   </div>
-  <div class="popup" onclick="Popindice()">
-  <img src="src/main/webapp/assets/icon/indice.png">
-  <span class="popuptext" id="myPopup">Impossible de faire de la musique sans instrument !</span>
+  
+  <div class="icon-form popup" onclick="Popindice()">
+    <img src="src/main/webapp/assets/icon/indice.svg" style="flood-color: var(--background-color);" height="40px">
+    <div class="popuptext" id="myPopup">Impossible de faire de la musique sans instrument !</div>
+    <h4 style="color: var(--background-color);">Indice</h4>
   </div>
-  <img src="src/main/webapp/assets/icon/narration.png" onclick="playAudio(ActIquestion)" alt="Italian Trulli">
 </section>
 
-<section id="screen-5">
+<section id="screen-5" class="section-form">
+  <div class="header-form">
+    <button data-goto="screen-4" class="return-button" onclick="pauseAudio(ActIréponse)">← Retour</button>
+    <div class="narration-form" onclick="playAudio(ActIréponse)" alt="Italian Trulli">
+      <img src="src/main/webapp/assets/icon/narration.svg" height="40px">
+      <h4>Narration</h4>
+    </div>
+  </div>
+
   <h2>Interlude</h2>
-  <p>Quel talent ! Il s’agissait bien de “Un chanteur s'accompagnant au Luth” de Ter Brugghen. Ce tableau est connu pour son utilisation du clair-obscur, qui crée un contraste dramatique entre la lumière et l'ombre.</p>
-  <p>Dirigez-vous vers la zone 2</p>
-  <button data-goto="screen-6" onclick="pauseAudio(ActIréponse)">
-    Continuer
-  </button>
-  <img src="src/main/webapp/assets/icon/narration.png" onclick="playAudio(ActIréponse)" alt="Italian Trulli">
+  <div id="head-line"></div>
+  <div class="text-form">
+    <p>Quel talent ! Il s’agissait bien de “Un chanteur s'accompagnant au Luth” de Ter Brugghen. Ce tableau est connu pour son utilisation du clair-obscur, qui crée un contraste dramatique entre la lumière et l'ombre.</p>
+    <p class="bold-text">Dirigez-vous vers la zone 2.</p>
+  </div>
+
+  <div class="button-form">
+    <button data-goto="screen-6" class="first-main-button" onclick="pauseAudio(ActIréponse)">
+      CONTINUER →
+    </button>
+  </div>
 </section>
 
-<section id="screen-6">
+<section id="screen-6" class="section-form">
+  <div class="header-form">
+    <button data-goto="screen-5" class="return-button" onclick="pauseAudio(ActIIquestion)">← Retour</button>
+    <div class="narration-form" onclick="playAudio(ActIIquestion)" alt="Italian Trulli">
+      <img src="src/main/webapp/assets/icon/narration.svg" height="40px">
+      <h4>Narration</h4>
+    </div>
+  </div>
+
   <h2>Acte II</h2>
-  <p>Voici ma deuxième énigme :</p>
-  <p>En dehors de mes plage habituelle </br>
-    Me voilà bien assécher, </br>
-    C'est maintenant sur cette nature morte, </br>
-    Que je vais résidé.</br>
-  </br>Qui suis-je ?
-  </p>
-<button id="faux" data-goto="screen-6">Vanitas</button>
-</br>
-  <button data-goto="screen-6-2">
-    Nature morte aux crustacés
-  </button>
-  </br>
-<button id="faux" data-goto="screen-6">Trophée de chasse</button>
-</br>
-<button id="faux" data-goto="screen-6">Guirlande de fruit</button>
+  <div id="head-line"></div>
 
-</br></br>
-<div class="popup" onclick="Popindice2()">
-  <img src="src/main/webapp/assets/icon/indice.png">
-  <span class="popuptext" id="myPopup2">Attention, si vous ne faites pas attention, la peinture va vous pincez</span>
+  <div class="text-act-form">
+    <p>Voici ma deuxième énigme :</p>
+    <div class="italic-text">
+      <p>"En dehors de mes plages habituelles </br>
+      Me voilà bien asséché, </br>
+      C'est maintenant sur cette nature morte </br>
+      Que je vais résider."</br></p>
+    </div>
+    <div class="bold-text"><p></br>Qui suis-je ?</p></div>
+  </div>
+
+  <div class="button-act-form">
+    <button id="faux" data-goto="screen-6" class="third-main-button">Vanitas</button>
+    </br>
+    <button data-goto="screen-6-2" class="third-main-button">
+      Nature morte aux crustacés
+    </button>
+    </br>
+    <button id="faux" data-goto="screen-6" class="third-main-button">Trophée de chasse</button>
+    </br>
+    <button id="faux" data-goto="screen-6" class="third-main-button">Guirlande de fruits</button>
+  </div>
+
+<div class="icon-form popup" onclick="Popindice2()">
+  <div>
+    <img src="src/main/webapp/assets/icon/indice.svg" style="flood-color: var(--background-color);" height="40px">
+    <span class="popuptext" id="myPopup2">Attention, si vous ne faites pas attention, la peinture va vous pincez.</span>
+  </div>
+  <h4 style="color: var(--background-color);">Indice</h4>
 </div>
-<img src="src/main/webapp/assets/icon/narration.png" onclick="playAudio(ActIIquestion)" alt="Italian Trulli">
 </section>
 
-<section id="screen-7">
+<section id="screen-7" class="section-form">
+  <div class="header-form">
+    <button data-goto="screen-6" class="return-button" onclick="pauseAudio(ActIIréponse)">← Retour</button>
+    <div class="narration-form" onclick="playAudio(ActIIréponse)" alt="Italian Trulli">
+      <img src="src/main/webapp/assets/icon/narration.svg" height="40px">
+      <h4>Narration</h4>
+    </div>
+  </div>
+
   <h2>Interlude</h2>
-  <p>Tu as trouvé ! “Nature morte aux crustacés” date de 1911 et il est considéré comme faisant partie de la période fauvise de Matisse. Rendez-vous à l’acte 3 pour la dernière énigme</p>
-  <p>Diriger vous vers la zone 3</p>
-  <button data-goto="screen-8" onclick="pauseAudio(ActIIréponse)">
-    Continuer
-  </button>
-  <img src="src/main/webapp/assets/icon/narration.png" onclick="playAudio(ActIIréponse)" alt="Italian Trulli">
+  <div id="head-line"></div>
+
+  <div class="text-form">
+    <p>Tu as trouvé ! “Nature morte aux crustacés” de Jan Van Kessel et date de 1653. Rendez-vous à l’acte 3 pour la dernière énigme</p>
+    <p>Diriger-vous vers la zone 3.</p>
+  </div>
+  <div class="button-form">
+    <button data-goto="screen-8" class="first-main-button" onclick="pauseAudio(ActIréponse)">
+      CONTINUER →
+    </button>
+  </div>
 </section>
 
-<section id="screen-8">
+<section id="screen-8" class="section-form">
+  <div class="header-form">
+    <button data-goto="screen-7" class="return-button" onclick="pauseAudio(ActIIIquestion)">← Retour</button>
+    <div class="narration-form" onclick="playAudio(ActIIIquestion)" alt="Italian Trulli">
+      <img src="src/main/webapp/assets/icon/narration.svg" height="40px">
+      <h4>Narration</h4>
+    </div>
+  </div>
+
   <h2>Acte III</h2>
-  <p>Attention, voici ma dernière énigme ! </p>
-  <p>Le roi de la jungle,</br>
+  <div id="head-line"></div>
+  
+  <div class="italic-text">
+    <p>Attention, voici ma dernière énigme ! </p>
+    <p>Le roi de la jungle,</br>
     A été vaincu ce soir,</br>
-    On à beau être petit,</br>
-    Ensemble on est plus fort.</br>
-  </br>Qui suis-je ?
+    On a beau être petit,</br>
+    Ensemble on est plus fort.</br></p>
+  </div>
+  <div class="bold-text"><p></br>Qui suis-je ?
+  </p></div>
+
+  <div class="button-act-form">
+    <button data-goto="screen-8-2" class="third-main-button">
+      Le lion mort
+    </button>
+    </br>
+    <button id="faux" data-goto="screen-8" class="third-main-button">Etudes d'une marmotte et d'un raton laveur</button>
+    </br>
+    <button id="faux" data-goto="screen-8" class="third-main-button">Laocoon et ses fils mordus par les serpents</button>
+    </br>
+    <button id="faux" data-goto="screen-8" class="third-main-button">La chasse aux renards</button>
+  </div>
+
+  <div class="icon-form popup" onclick="Popindice3()">
+    <div>
+      <img src="src/main/webapp/assets/icon/indice.svg" style="flood-color: var(--background-color);" height="40px">
+      <span class="popuptext" id="myPopup3">On dirait que le roi de la jungle remplacera les carottes pour le dîner de ce soir.</span>
+    </div>
+    <h4 style="color: var(--background-color);">Indice</h4>
+  </div>
+</section>
+
+<section id="screen-8.réponse" class="section-form">
+  <div class="header-form">
+    <button data-goto="screen-8" class="return-button" onclick="pauseAudio(ActIIIréponse)">← Retour</button>
+    <div class="narration-form" onclick="playAudio(ActIIIréponse)" alt="Italian Trulli">
+      <img src="src/main/webapp/assets/icon/narration.svg" height="40px">
+      <h4>Narration</h4>
+    </div>
+  </div>
+
+  <h2>Interlude</h2>
+  <div id="head-line"></div>
+
+  <div class="text-form">
+    <p>Tu as du flair. Snyders a été très influent dans l'évolution de l'art de la nature morte, en introduisant de nouveaux sujets tels que les animaux morts et en développant un style plus sophistiqué et détaillé.</p>
+  </div>
+  
+  <div class="button-form">
+    <button data-goto="screen-9" class="first-main-button" onclick="pauseAudio(ActIIIréponse)">
+      CONTINUER →
+    </button>
+  </div>
+</section>
+
+<section id="screen-9" class="section-form">
+  <div class="header-form">
+    <button data-goto="screen-8.réponse" class="return-button" onclick="pauseAudio()">← Retour</button>
+    <div class="narration-form" onclick="playAudio()" alt="Italian Trulli">
+      <img src="src/main/webapp/assets/icon/narration.svg" height="40px">
+      <h4>Narration</h4>
+    </div>
+  </div>
+
+  <h2>Epilogue</h2>
+  <div id="head-line"></div>
+  <div class="text-form">
+    <p>Je suis très fier de toi, merci d’avoir joué le jeu. À présent, je peux me reposer en paix. Sache que ce fut un rêve pour moi d’ouvrir les portes de ce musée ! Je te souhaite tout le possible pour que toi aussi tu puisses parvenir aux tiens.</p>
+  </div>
+
+  <div class="button-form">
+    <button data-goto="screen-10" class="first-main-button" onclick="pauseAudio(ActIIIréponse)">
+      CONTINUER →
+    </button>
+  </div>
+</section>
+
+<section id="screen-10" class="section-form">
+  <div class="header-form">
+    <button data-goto="screen-9" class="return-button" onclick="pauseAudio()">← Retour</button>
+    <div class="narration-form" onclick="playAudio()" alt="Italian Trulli">
+      <img src="src/main/webapp/assets/icon/narration.svg" height="40px">
+      <h4>Narration</h4>
+    </div>
+  </div>
+
+  <h2>Félicitations!</h2>
+  <div id="head-line"></div>
+  <div class="text-form">
+    <p>Merci d'avoir fini notre experience immersive, nous vous remercions et vous souhaitons une bonne visite du reste du musée !</p>
+  </div>
+
+  <div class="button-last-form">
+    <button data-goto="screen-11" class="first-main-button" onclick="pauseAudio()">
+      CRÉDITS
+    </button>
+    <a onclick="document.location.reload(true); pauseAudio()">
+      <h4 class="return-menu">Retour à l'accueil</h4>
+    </a>
+  </div>
+</section>
+
+<section id="screen-11" class="section-form">
+  <div style="position: sticky;">
+    <div class="header-form">
+      <button data-goto="screen-9" class="return-button" onclick="document.location.reload(true)">← Quitter</button>
+    </div>
+  
+    <h2>Crédits</h2>
+    <div id="head-line"></div>
+  </div>
+
+  <p id="credit-text-names" class="text-form">
+  Peyo Suire - Développeur & voix off</br>
+  Mathys Wagner - Développeur</br>
+  Clément Vives - Audio & rédaction</br>
+  Audrey Millot - Communication</br>
+  Mathéo Reulier - Rédaction</br>
+  Maxime Rebierre - Rédaction</p>
+
+  <h4>Oeuvres utilisées : </h4>
+  <p id="credit-text">Jan Van KESSEL, "Nature morte aux crustacés" </br>
+  Melchior d’HONDECOETER, "Trophée de chasse" </br>
+  Cornelis Norbertus GIJSBRECHTS, “Vanitas” </br>
+  Alexander COOSEMANS, “Guirlandes de fruits” </br>
+  Guiseppe VERMIGLIO, “Saint Marc écrivant sous la dictée de saint Pierre” </br>
+  Maître à la chandelle, “Saint Sébastien soigné par Irène” </br>
+  Pedro DE MOYA, “Autoportrait” </br>
+  Hendrick TER BRUGGHEN, “Un chanteur s'accompagnant au luth” </br>
+  Frans SNYDERS, “Le Lion mort” </br>
+  Pieter BOEL, “Etudes d'une marmotte et d'un raton laveur” </br>
+  Pieter CLAESZ. SOUTMAN, “Laocoon et ses fils mordus par les serpents” </br>
+  Jan FYT, “La Chasse aux renards” </br>
+  Pierre LACOUR, “Sur le quai des chartrons”
   </p>
 
-<button data-goto="screen-8-2">
-    Le lion mort
-</button>
-</br>
-<button id="faux" data-goto="screen-8">Etudes d'une marmotte d'un raton laveur</button>
-
-</br>
-<button id="faux" data-goto="screen-8">Laocoon et ses fils mordus par les serpents</button>
-</br>
-<button id="faux" data-goto="screen-8">La chasse aux renard</button>
-
-</br></br>
-<div class="popup" onclick="Popindice3()">
-  <img src="src/main/webapp/assets/icon/indice.png">
-  <span class="popuptext" id="myPopup3">On dirait que le roi de la jungle remplacera les carottes pour le dîner de ce soir</span>
-</div>
-<img src="src/main/webapp/assets/icon/narration.png" onclick="playAudio(ActIIIquestion)" alt="Italian Trulli">
-</section>
-
-<section id="screen-8.réponse">
-  <h2>Interlude</h2>
-  <p>Tu as du flair. Snyders a été très influent dans l'évolution de l'art de la nature morte, en introduisant de nouveaux sujets tels que les animaux morts et en développant un style plus sophistiqué et détaillé.</p>
-  <button data-goto="screen-9" onclick="pauseAudio(ActIIIréponse)">
-    Continuer
-  </button>
-  <img src="src/main/webapp/assets/icon/narration.png" onclick="playAudio(ActIIIréponse)" alt="Italian Trulli">
-</section>
-
-<section id="screen-9">
-  <h2>Epilogue</h2>
-  <p>Je suis très fier de toi, merci d’avoir joué le jeu. À présent je peux me reposer en paix, sache que ce fut un rêve pour moi d’ouvrir les portes de ce musée ! Je te souhaite tout le possible pour que toi aussi tu puisses parvenir aux tiens.</p>
-  <button data-goto="screen-10" onclick="pauseAudio(épilogue)">
-    Continuer
-  </button>
-  <img src="src/main/webapp/assets/icon/narration.png" onclick="playAudio(épilogue)" alt="Italian Trulli">
-</section>
-
-<section id="screen-10">
-  <h2>Félicitation</h2>
-  <p>Bravo d'avoir fini notre experience immersive, nous vous remercions et vous souhaitons une bonne visite du reste du musée !</p>
-  <button data-goto="screen-11">
-    Crédits
-  </button>
-</br>
-</br>
-<button onclick="document.location.reload(true)">
-  Acceuil
-</button>
-</section>
-
-<section id="screen-11">
-  <h2>Crédits</h2>
-  <button onclick="document.location.reload(true)">
-    Acceuil
-  </button>
+  <a onclick="document.location.reload(true); pauseAudio()">
+    <h4 class="return-menu">Retour à l'accueil</h4>
+  </a>
 </section>
 
 
 <section id="screen-4-2" class="section-form">
-  <button data-goto="screen-4" class="return-button">← Retour</button>
+  <div class="header-form">
+    <button data-goto="screen-3" class="return-button" onclick="pauseAudio(ActIquestion)">← Retour</button>
+    <div class="narration-form" onclick="playAudio(ActIquestion)" alt="Italian Trulli">
+      <img src="src/main/webapp/assets/icon/narration.svg">
+      <h4>Narration</h4>
+    </div>
+  </div>
+
   <h2>Acte I</h2>
   <div id="head-line"></div>
 
   <div class="text-act-form">
     <p>C’est bon ? Très bien ! Maintenant voici l’énigme :</p>
-    <div id="italic-text">
+    <div class="italic-text">
       <p>"La musique que je chante </br>
       Vous partage mes émotions </br>
       Pourtant je vous tourne le dos </br>
-      Mais ma chanson n'est pas fini"</br>
+      Mais ma chanson n'est pas fini"</br></p>
     </div>
-    </br><div id="bold-text">Qui suis-je ?</div></p>
+    </br><div class="bold-text">Qui suis-je ?</div></p>
   </div>
 
   <div class="button-act-form">
-    <button class="third-main-button" style="background-color: var(--main-color);">
+    <button disabled class="third-main-button" style="background-color: var(--main-color);">
       Un Chanteur s'accompagnant au Luth
     </button>
     </br>
-    <button class="third-main-button">Saint Sébastien soigné par Irène</button>
+    <button disabled class="third-main-button">Saint Sébastien soigné par Irène</button>
     </br>
-    <button class="third-main-button">Saint Marc écrivant sous la dictée de Saint Pierre</button>
+    <button disabled class="third-main-button">Saint Marc écrivant sous la dictée de Saint Pierre</button>
     </br>
-    <button class="third-main-button">Autoportait</button>
+    <button disabled class="third-main-button">Autoportait</button>
   </div>
-  <div class="button-form">
-    <button data-goto="screen-5" class="first-main-button" onclick="pauseAudio(ActIquestion)">
-      CONTINUER →
-    </button>
+
+  <div class="header-form">
+    <div class="button-form">
+      <button data-goto="screen-5" class="first-main-button" onclick="pauseAudio(ActIquestion)" style="height: 75%;">
+        VALIDER →
+      </button>
+    </div>
   </div>
-  <img src="src/main/webapp/assets/icon/narration.png" onclick="playAudio(ActIquestion)" alt="Italian Trulli">
 </section>
 
 
 
-<section id="screen-6-2">
+<section id="screen-6-2" class="section-form">
+  <div class="header-form">
+    <button data-goto="screen-5" class="return-button" onclick="pauseAudio(ActIIquestion)">← Retour</button>
+    <div class="narration-form" onclick="playAudio(ActIIquestion)" alt="Italian Trulli">
+      <img src="src/main/webapp/assets/icon/narration.svg">
+      <h4>Narration</h4>
+    </div>
+  </div>
+
   <h2>Acte II</h2>
+  <div id="head-line"></div>
+
   <p>Voici ma deuxième énigme :</p>
-  <p>En dehors de mes plage habituelle </br>
-    Me voilà bien assécher, </br>
-    C'est maintenant sur cette nature morte, </br>
-    Que je vais résidé.</br>
-  </br>Qui suis-je ?
-  </p>
-<button id="rouge" disabled>Vanitas</button>
-</br>
-  <button id="vert" disabled>
-    Nature morte aux crustacés
-  </button>
-  </br>
-  <button id="rouge" disabled>Trophée de chasse</button>
-</br>
-<button id="rouge" disabled>Guirlande de fruit</button>
-</br></br>
-<button data-goto="screen-7" onclick="pauseAudio(ActIIquestion)">
-  Continuer
-</button>
-<img src="src/main/webapp/assets/icon/narration.png" onclick="playAudio(ActIIquestion)" alt="Italian Trulli">
+  <div class="italic-text">
+    <p>"En dehors de mes plages habituelles </br>
+      Me voilà bien asséché, </br>
+      C'est maintenant sur cette nature morte </br>
+      Que je vais résider."</br></p>
+  </div>
+  <div class="bold-text"><p></br>Qui suis-je ?</p></div>
+
+  <div class="button-act-form">
+    <button id="rouge" disabled class="third-main-button">Vanitas</button>
+    </br>
+    <button id="vert" disabled class="third-main-button" style="background-color: var(--main-color);">
+      Nature morte aux crustacés
+    </button>
+    </br>
+    <button id="rouge" disabled class="third-main-button">Trophée de chasse</button>
+    </br>
+    <button id="rouge" disabled class="third-main-button">Guirlande de fruits</button>
+  </div>
+
+  <div class="header-form">
+    <div class="button-form">
+      <button data-goto="screen-7" class="first-main-button" onclick="pauseAudio(ActIIquestion)" style="height: 75%;">
+        VALIDER →
+      </button>
+    </div>
+  </div>
 </section>
 
 
-<section id="screen-8-2">
+<section id="screen-8-2" class="section-form">
+  <div class="header-form">
+    <button data-goto="screen-7" class="return-button" onclick="pauseAudio(ActIIIquestion)">← Retour</button>
+    <div class="narration-form" onclick="playAudio(ActIIIquestion)" alt="Italian Trulli">
+      <img src="src/main/webapp/assets/icon/narration.svg">
+      <h4>Narration</h4>
+    </div>
+  </div>
+
   <h2>Acte III</h2>
+  <div id="head-line"></div>
+
   <p>Attention, voici ma dernière énigme ! </p>
   <p>Le roi de la jungle,</br>
     A été vaincu ce soir,</br>
-    On à beau être petit,</br>
+    On a beau être petit,</br>
     Ensemble on est plus fort.</br>
   </br>Qui suis-je ?
   </p>
 
-<button id="vert" disabled>
-    Le lion mort
-</button>
-</br>
-<button id="rouge" disabled>Etudes d'une marmotte d'un raton laveur</button>
+  <div>
+    <button id="vert" disabled class="third-main-button">
+      Le lion mort
+    </button>
+    </br>
+    <button id="rouge" disabled class="third-main-button">Etudes d'une marmotte et d'un raton laveur</button>
+    </br>
+    <button id="rouge" disabled class="third-main-button">Laocoon et ses fils mordus par les serpents</button>
+    </br>
+    <button id="rouge" disabled class="third-main-button">La chasse aux renards</button>
+  </div>
 
-</br>
-<button id="rouge" disabled>Laocoon et ses fils mordus par les serpents</button>
-</br>
-<button id="rouge" disabled>La chasse aux renard</button>
-</br></br>
-<button data-goto="screen-8.réponse" onclick="pauseAudio(ActIIIquestion)">
-  Continuer
-</button>
-<img src="src/main/webapp/assets/icon/narration.png" onclick="playAudio(ActIIIquestion)" alt="Italian Trulli">
+  <div class="header-form">
+    <div class="button-form">
+      <button data-goto="screen-8.réponse" class="first-main-button" onclick="pauseAudio(ActIIIquestion)" style="height: 75%;">
+        VALIDER →
+      </button>
+    </div>
+  </div>
 </section>
 
 
