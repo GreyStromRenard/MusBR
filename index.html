@@ -45,6 +45,9 @@
         <source src="src/main/webapp/assets/audio/epilogue.mp3" type="audio/mpeg">
       </audio>
 
+      <audio id="félicitation">
+        <source src="src/main/webapp/assets/audio/finito.mp3" type="audio/mpeg">
+      </audio>
   </head>
 <body>
 <!-- partial:index.partial.html -->
@@ -305,8 +308,8 @@
 
 <section id="screen-9" class="section-form">
   <div class="header-form">
-    <button data-goto="screen-8.réponse" class="return-button" onclick="pauseAudio()">← Retour</button>
-    <div class="narration-form" onclick="playAudio()" alt="Italian Trulli">
+    <button data-goto="screen-8.réponse" class="return-button" onclick="pauseAudio(épilogue)">← Retour</button>
+    <div class="narration-form" onclick="playAudio(épilogue)" alt="Italian Trulli">
       <img src="src/main/webapp/assets/icon/narration.svg" height="40px">
       <h4>Narration</h4>
     </div>
@@ -319,7 +322,7 @@
   </div>
 
   <div class="button-form">
-    <button data-goto="screen-10" class="first-main-button" onclick="pauseAudio(ActIIIréponse)">
+    <button data-goto="screen-10" class="first-main-button" onclick="pauseAudio(épilogue)">
       CONTINUER →
     </button>
   </div>
@@ -327,8 +330,8 @@
 
 <section id="screen-10" class="section-form">
   <div class="header-form">
-    <button data-goto="screen-9" class="return-button" onclick="pauseAudio()">← Retour</button>
-    <div class="narration-form" onclick="playAudio()" alt="Italian Trulli">
+    <button data-goto="screen-9" class="return-button" onclick="pauseAudio(félicitation)">← Retour</button>
+    <div class="narration-form" onclick="playAudio(félicitation)" alt="Italian Trulli">
       <img src="src/main/webapp/assets/icon/narration.svg" height="40px">
       <h4>Narration</h4>
     </div>
@@ -341,10 +344,10 @@
   </div>
 
   <div class="button-last-form">
-    <button data-goto="screen-11" class="first-main-button" onclick="pauseAudio()">
+    <button data-goto="screen-11" class="first-main-button" onclick="pauseAudio(félicitation)">
       CRÉDITS
     </button>
-    <a onclick="document.location.reload(true); pauseAudio()">
+    <a onclick="document.location.reload(true); pauseAudio(félicitation)">
       <h4 class="return-menu">Retour à l'accueil</h4>
     </a>
   </div>
