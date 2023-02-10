@@ -19,7 +19,7 @@ body
     /* Image de fond */
     background-image: url('/src/main/webapp/assets/background.png');
     background-size: 170%;
-    background-position-y: 410px;
+    background-position-y: bottom;
     background-repeat: no-repeat;
     /* background-attachment: fixed; */
 }

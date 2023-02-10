@@ -25,6 +25,17 @@
     font-size: 14px;
     margin-top: 30px;
     margin-bottom: 30px;
+    background-color: var(--background-color);
+    padding: 17px;
+    border-radius: 7px;
+}
+
+#credit-return
+{
+    padding: 17px;
+    background-color: var(--background-color);
+    color: var(--main-color) !important;
+    border-radius: 7px;
 }
 
 #screen-11
