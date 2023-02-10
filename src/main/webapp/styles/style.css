@@ -7,8 +7,8 @@ body
     margin: 0;
     background-color: var(--background-color);
     overflow: auto;
-    overflow-y: hidden;
-    height: 100vh;
+    /* overflow-y: hidden; */
+    height: auto;
     /* max-height: 900px; */
     /* min-height: none; */
     max-width: max-content;
@@ -147,37 +147,29 @@ h4
 
 /* Popup container - can be anything you want */
 .popup {
-    position: relative;
-    display: inline-block;
+    /* position: relative; */
     cursor: pointer;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
   }
-  
+
   /* The actual popup */
   .popup .popuptext {
     visibility: hidden;
-    width: 250%;
-    background-color: #555;
-    color: #fff;
-    text-align: end;
-    border-radius: 6px;
-    padding: 8px ;
-    position: absolute;
-    z-index: 1;
-    bottom: 125%;
+    width: 90%;
+    background-color: var(--main-color);
+    color: var(--background-color);
+    text-align: center;
+    border-radius: 7px;
+    padding: 8px;
+    position: fixed;
     left: 50%;
-    margin-left: 25%;
+    transform: translate(-50%, 0%);
+    bottom: 100px;
+    z-index: 1;
   }
   
   /* Popup arrow */
   .popup .popuptext::after {
     content: "";
-    position: absolute;
-    top: 100%;
-    left: 50%;
     margin-left: -5px;
     border-width: 5px;
     border-style: solid;

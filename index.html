@@ -48,7 +48,7 @@
   </head>
 <body>
 <!-- partial:index.partial.html -->
-<section id="screen-1" class="section-form">
+<section id="screen-1" class="section-form is-visible">
   <div class="form">
     <div id="main-head">
         <img src="src/main/webapp/assets/icon_musbr.svg" alt="Icône du Musée des Beaux Rêves" width="50px">
@@ -140,11 +140,9 @@
     <button id="faux" data-goto="screen-4" class="third-main-button">Autoportait</button>
   </div>
   
-  <div class="icon-form">
-    <div class="popup" onclick="Popindice()">
-      <img src="src/main/webapp/assets/icon/indice.svg" style="flood-color: var(--background-color);" height="40px">
-      <span class="popuptext" id="myPopup">Impossible de faire de la musique sans instrument !</span>
-    </div>
+  <div class="icon-form popup" onclick="Popindice()">
+    <img src="src/main/webapp/assets/icon/indice.svg" style="flood-color: var(--background-color);" height="40px">
+    <div class="popuptext" id="myPopup">Impossible de faire de la musique sans instrument !</div>
     <h4 style="color: var(--background-color);">Indice</h4>
   </div>
 </section>
@@ -184,14 +182,16 @@
   <h2>Acte II</h2>
   <div id="head-line"></div>
 
-  <p>Voici ma deuxième énigme :</p>
-  <div class="italic-text">
-    <p>"En dehors de mes plages habituelles </br>
+  <div class="text-act-form">
+    <p>Voici ma deuxième énigme :</p>
+    <div class="italic-text">
+      <p>"En dehors de mes plages habituelles </br>
       Me voilà bien asséché, </br>
       C'est maintenant sur cette nature morte </br>
       Que je vais résider."</br></p>
+    </div>
+    <div class="bold-text"><p></br>Qui suis-je ?</p></div>
   </div>
-  <div class="bold-text"><p></br>Qui suis-je ?</p></div>
 
   <div class="button-act-form">
     <button id="faux" data-goto="screen-6" class="third-main-button">Vanitas</button>
@@ -205,8 +205,8 @@
     <button id="faux" data-goto="screen-6" class="third-main-button">Guirlande de fruits</button>
   </div>
 
-<div class="icon-form">
-  <div class="popup" onclick="Popindice2()">
+<div class="icon-form popup" onclick="Popindice2()">
+  <div>
     <img src="src/main/webapp/assets/icon/indice.svg" style="flood-color: var(--background-color);" height="40px">
     <span class="popuptext" id="myPopup2">Attention, si vous ne faites pas attention, la peinture va vous pincez.</span>
   </div>
@@ -271,8 +271,8 @@
     <button id="faux" data-goto="screen-8" class="third-main-button">La chasse aux renards</button>
   </div>
 
-  <div class="icon-form">
-    <div class="popup" onclick="Popindice3()">
+  <div class="icon-form popup" onclick="Popindice3()">
+    <div>
       <img src="src/main/webapp/assets/icon/indice.svg" style="flood-color: var(--background-color);" height="40px">
       <span class="popuptext" id="myPopup3">On dirait que le roi de la jungle remplacera les carottes pour le dîner de ce soir.</span>
     </div>
@@ -350,7 +350,7 @@
   </div>
 </section>
 
-<section id="screen-11" class="section-form is-visible">
+<section id="screen-11" class="section-form">
   <div style="position: sticky;">
     <div class="header-form">
       <button data-goto="screen-9" class="return-button" onclick="document.location.reload(true)">← Quitter</button>
